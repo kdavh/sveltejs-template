@@ -1,29 +1,38 @@
+# create-svelte
 
-# svelte app with Gitpod setup
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
 
-[![Gitpod ready-to-code](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gitpod-io/sveltejs-template)
+## Creating a project
 
-This is a project template for [Svelte](https://svelte.dev) apps. 
+If you're seeing this, you've probably already done this step. Congrats!
 
-## SvelteKit
+```bash
+# create a new project in the current directory
+npm init svelte@next
 
-If you are looking for a SvelteKit example, please use https://github.com/gitpod-io/sveltekit-example.
-
-## Special config for Gitpod to make rollup work
-
-Rollup needs to know how to reach the livereload endpoint. To configure that we need to do two things in our config:
-
-1) set an environment variable
-```
-export CLIENT_URL="$(gp url 35729)/livereload.js?snipver=1&port=443"
-```
-2) pass the env value to the livereload module in [`rollup.config.js:65`](https://github.com/gitpod-io/sveltejs-template/blob/587088aae9cb7331c27591b7f8cef9d58c037e46/rollup.config.js#L66-L69)
-```js
-		!production && livereload({
-            watch: 'public',
-            clientUrl: process.env.CLIENT_URL
-        }),
+# create a new project in my-app
+npm init svelte@next my-app
 ```
 
-This will set `CLIENT_URL` with the workspace url of `35729` (default port for livereload).
+> Note: the `@next` is temporary
 
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
+
+```bash
+npm run build
+```
+
+> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
